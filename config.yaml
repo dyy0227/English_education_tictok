@@ -1,0 +1,32 @@
+llm:
+  provider: ollama
+  model: llama3
+  api_base: http://localhost:11434
+  api_key: ""
+  max_tokens: 2000
+  temperature: 0.3
+
+video:
+  input_folder: ./videos
+  output_folder: ./output
+  subtitle_language: en
+
+proverb:
+  min_words: 2
+  max_words: 8
+  types:
+    - Proverb
+    - Saying
+    - Colloquialism
+    - Slang
+    - Collocation
+    - Phrasal verb
+    - Set phrase
+
+cost:
+  max_total_cost: 10.0
+  cost_per_token: 0.000002
+
+packages:
+  ffmpeg_path: ffmpeg
+  whisper_model: base
