@@ -1,0 +1,8 @@
+openai==1.13.3
+whisper==20231117
+ffmpeg-python==0.2.0
+pydub==0.25.1
+sqlalchemy==2.0.27
+pyyaml==6.0.1
+pandas==2.2.1
+scipy==1.12.0

@@ -29,4 +29,30 @@ cost:
 
 packages:
   ffmpeg_path: ffmpeg
-  whisper_model: base
+  whisper_model: basellm:
+  providerllm:
+  provider: ollama
+  api_base: http://localhostllm:
+  provider: ollama
+  api_base: http://localhost:11434/v1
+  api_key: ""
+  model: llama3llm:
+  provider: ollama
+  api_base: http://localhost:11434/v1
+  api_key: ""
+  model: llama3
+  max_tokens: 2048
+  temperature: 0.3
+
+prollm:
+  provider: ollama
+  api_base: http://localhost:11434/v1
+  api_key: ""
+  model: llama3
+  max_tokens: 2048
+  temperature: 0.3
+
+proverb:
+  min_words: 2
+  max_words: 10
+  types
