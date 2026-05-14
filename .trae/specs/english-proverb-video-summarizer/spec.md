@@ -38,12 +38,13 @@
 ## Non-Functional Requirements
 - **NFR-1**: 支持Ollama本地LLM以节省API费用
 - **NFR-2**: 支持批量处理视频文件
-- **NFR-3**: 提供详细的处理日志
+- **NFR-3**: 提供详细的处理日志和CLI进度报告
 - **NFR-4**: 支持断点续处理
 - **NFR-5**: 错误处理和异常恢复
+- **NFR-6**: 支持GPU加速以提高处理速度（支持NVIDIA CUDA和AMD ROCm）
 
 ## Constraints
-- **Technical**: Python 3.10+, 需要安装FFmpeg、Whisper、SQLite等依赖
+- **Technical**: Python 3.10+, 需要安装FFmpeg、Whisper、SQLite、MySQL等依赖
 - **Business**: 需要控制API调用成本
 - **Dependencies**: 需要额外下载的软件包（如Whisper模型、FFmpeg）
 
@@ -110,7 +111,7 @@
 - **Verification**: `programmatic`
 
 ## Open Questions
-- [ ] 是否需要支持GPU加速？
-- [ ] 是否需要提供图形界面？
-- [ ] 是否需要支持其他数据库类型（如MySQL）？
-- [ ] 是否需要提供进度报告功能？
+- [x] 是否需要支持GPU加速？→ 是，已添加NFR-6
+- [x] 是否需要提供图形界面？→ 否，CLI即可
+- [x] 是否需要支持其他数据库类型（如MySQL）？→ 是，支持MySQL和SQLite
+- [x] 是否需要提供进度报告功能？→ 是，已添加到NFR-3
