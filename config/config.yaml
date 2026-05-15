@@ -1,0 +1,83 @@
+# 英语熟语视频总结程序配置文件
+
+# 视频源配置
+video:
+  input_folder: "/path/to/your/videos"  # 视频文件夹路径
+  output_folder: "./output"              # 输出文件夹路径
+  supported_formats:
+    - .mp4
+    - .avi
+    - .mkv
+    - .mov
+    - .webm
+
+# 熟语配置
+proverb:
+  min_words: 2       # 熟语最小词数
+  max_words: 10      # 熟语最大词数
+  types:
+    - Proverb          # 谚语
+    - Saying           # 格言
+    - Colloquialism    # 口语表达
+    - Slang            # 俚语
+    - Collocation      # 搭配
+    - Phrasal_verb     # 短语动词
+    - Set_phrase       # 固定短语
+
+# LLM配置
+llm:
+  provider: "ollama"   # ollama, openai
+  model: "llama3.1:8b" # Ollama模型名称
+  api_base: "http://localhost:11434"  # Ollama API地址
+  api_key: ""          # OpenAI API Key（使用Ollama时留空）
+  timeout: 60          # 请求超时时间（秒）
+  max_tokens: 2000     # 最大token数
+
+# GPU配置
+gpu:
+  enabled: true        # 是否启用GPU加速
+  device: "auto"       # auto, cuda, rocm, cpu（AMD GPU使用rocm）
+  fp16: true           # 是否使用FP16推理
+
+# 数据库配置
+database:
+  type: "sqlite"       # sqlite, mysql
+  path: "./data/proverbs.db"  # SQLite数据库路径
+  host: "localhost"    # MySQL主机
+  port: 3306           # MySQL端口
+  username: ""         # MySQL用户名
+  password: ""         # MySQL密码
+  database_name: "proverbs"  # MySQL数据库名
+
+# 费用控制配置
+cost:
+  enabled: false       # 是否启用费用控制
+  max_cost: 100.0      # 最大费用限制（元）
+  cost_per_1k_tokens: 0.001  # 每1000token费用（元）- Ollama本地使用时可设为0
+
+# Whisper配置
+whisper:
+  model: "base"        # tiny, base, small, medium, large
+  language: "en"       # 语言代码
+  beam_size: 5         # beam search大小
+  best_of: 5           # best of
+
+# 字幕配置
+subtitle:
+  font_size: 24        # 字体大小
+  font_color: "white"  # 字体颜色
+  font: "Arial"        # 字体
+  position: "bottom"   # 字幕位置: top, middle, bottom
+
+# 日志配置
+logging:
+  level: "INFO"        # DEBUG, INFO, WARNING, ERROR
+  file_path: "./logs/app.log"
+  max_size: 10         # 日志文件最大大小（MB）
+  backup_count: 5      # 备份日志文件数量
+
+# 处理配置
+processing:
+  batch_size: 10       # 批处理大小
+  skip_existing: true  # 是否跳过已处理的视频
+  overwrite: false     # 是否覆盖已存在的输出

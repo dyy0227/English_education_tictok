@@ -1,0 +1,26 @@
+# 核心依赖
+python-dotenv>=1.0.0
+PyYAML>=6.0.1
+
+# 视频处理
+ffmpeg-python>=0.2.0
+
+# 语音转文字
+faster-whisper>=1.0.0
+transformers>=4.40.0
+torch>=2.2.0
+
+# LLM支持
+ollama>=0.1.0
+
+# 数据库
+sqlalchemy>=2.0.0
+pysqlite3>=0.5.2
+mysql-connector-python>=8.0.0
+
+# CLI进度条
+tqdm>=4.66.0
+
+# 测试
+pytest>=8.0.0
+pytest-cov>=4.0.0
